@@ -1,4 +1,5 @@
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -75,7 +76,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': 'postgres://rprwjovvfnxylk:c03c79c5fb9a031a782e941b5b3dd06a7bf5cb1315cac69285f3df9d86f6615c@ec2-18-210-214-86.compute-1.amazonaws.com:5432/d9217jf48odqer',
+        # 'NAME': 'postgres://rprwjovvfnxylk:c03c79c5fb9a031a782e941b5b3dd06a7bf5cb1315cac69285f3df9d86f6615c@ec2-18-210-214-86.compute-1.amazonaws.com:5432/d9217jf48odqer',
     }
 }
 
@@ -141,3 +142,5 @@ STATICFILES_DIRS = (
 #     '/wiki_demo/wiki_demo/wiki/static/wiki/wiki_pics',
 #     '/wiki_demo/wiki_demo/wiki_pics',
 # ]
+
+django_heroku.settings(locals())
