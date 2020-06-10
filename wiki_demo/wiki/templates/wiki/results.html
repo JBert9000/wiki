@@ -1,0 +1,27 @@
+{% extends "wiki/base.html" %}
+{% block site %}
+
+  <h1>Search Results</h1>
+
+  {% for content in contents %}
+
+    <article class="media content-section">
+      <div>
+        <h2><a style="display:block" class="article-title" href=" {% url 'wiki-details' content.id %}">{{ content.title }}</a></h2>
+        <p>Posted on {{ content.date_posted }}</p>
+      </div>
+
+    </article>
+
+
+  {% endfor %}
+
+{% if not contents %}
+  <article class="media content-section">
+    <div>
+      <h5>Sorry, {{ query }} doesn't exsist yet. Why don't you <a href="{% url 'wiki-create' %}">create</a> it?</h5>
+    </div>
+  </article>
+{% endif %}
+
+{% endblock site %}

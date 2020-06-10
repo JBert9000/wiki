@@ -1,0 +1,26 @@
+{% extends "wiki/base.html" %}
+{% block site %}
+
+  <h1>Wiki Home</h1>
+
+  <p>Welcome! Click on the fox picture to get started.</p>
+
+  {% for content in contents %}
+
+    <article class="media content-section">
+      <div>
+        <h2><a style="display:block" class="article-title" href=" {% url 'wiki-details' content.id %}">{{ content.title }}</a></h2>
+        <p>Posted on {{ content.date_posted }}</p>
+        <div style="width: 350px;">
+          <a style="display:block" class="article-title" href=" {% url 'wiki-details' content.id %}"><img  style="width: 100%; height: auto; float: left; padding: 10px;" src="{{ content.image.url }}" alt=""></a>
+        </div>
+        <a style="display:block" class="article-content" href=" {% url 'wiki-details' content.id %}"><p class="article-content">{{ content.content | safe }}</p></a>
+      </div>
+
+    </article>
+
+
+  {% endfor %}
+
+
+{% endblock site %}
