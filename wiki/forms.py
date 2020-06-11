@@ -1,6 +1,7 @@
 from django import forms
 from .models import Content
 from django_summernote.widgets import SummernoteWidget
+from django_summernote.fields import SummernoteTextFormField
 
 
 class ContentModelForm(forms.ModelForm):
@@ -12,5 +13,6 @@ class ContentModelForm(forms.ModelForm):
             'image',
         ]
         widgets = {
-            'content': SummernoteWidget()
+            # 'content': SummernoteWidget()
+            'content': SummernoteTextFormField()
         }
