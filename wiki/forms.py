@@ -13,6 +13,6 @@ class ContentModelForm(forms.ModelForm):
             'image',
         ]
         widgets = {
-            # 'content': SummernoteWidget()
-            'content': SummernoteTextFormField()
+            'content': SummernoteWidget()
+            # 'content': SummernoteTextFormField()
         }
