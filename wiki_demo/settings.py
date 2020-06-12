@@ -30,6 +30,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'simple_history',
     'django_summernote',
+    'cloudinary',
+    'storages',
     # 'whitenoise.runserver_nostatic',
 ]
 
@@ -77,7 +79,6 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.postgresql',
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        # 'NAME': 'postgres://rprwjovvfnxylk:c03c79c5fb9a031a782e941b5b3dd06a7bf5cb1315cac69285f3df9d86f6615c@ec2-18-210-214-86.compute-1.amazonaws.com:5432/d9217jf48odqer',
     }
 }
 
@@ -139,14 +140,16 @@ STATICFILES_DIRS = (
     os.path.join('static'),
 )
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static"),
-#     '/wiki_demo/wiki_demo/wiki/static/wiki/wiki_pics',
-#     '/wiki_demo/wiki_demo/wiki_pics',
-# ]
-
 django_heroku.settings(locals())
 
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_NAME = os.environ.get('AWS_STORAGE_NAME')
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+
+DEAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 LOGGING = {
     'version': 1,
