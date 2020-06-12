@@ -30,7 +30,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'simple_history',
     'django_summernote',
-    'cloudinary',
     'storages',
     # 'whitenoise.runserver_nostatic',
 ]
