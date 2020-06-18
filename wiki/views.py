@@ -12,6 +12,42 @@ from django.db.models import Q
 from .forms import ContentModelForm
 
 
+dummy_data = {
+    1: {
+        'id': 1,
+        'title': 'Fox',
+        'content': 'This is dummy data that is not editable in this demo, but anyone is encouraged to create wiki posts which can also be edited by anyone. Typically a user can create, edit, and delete posts without making a profile. Links via the sidebar will automaically be made based on the title of each wiki post. Go back to the home page to check out more posts.',
+        'date_posted': 'June 15th 2020',
+        'date_updated': 'June 16th 2020',
+        'history': {'June 15th 2020', 'June 16th 2020'},
+    },
+    2: {
+        'id': 2,
+        'title': 'Frog',
+        'content': 'This is a picture of a frog.',
+        'date_posted': 'June 15th 2020',
+        'date_updated': 'June 16th 2020',
+        'history': {'June 15th 2020', 'June 16th 2020'},
+    },
+    3: {
+        'id': 3,
+        'title': 'Cat',
+        'content': 'This is a picture of a cat.',
+        'date_posted': 'June 15th 2020',
+        'date_updated': 'June 16th 2020',
+        'history': {'June 15th 2020', 'June 16th 2020'},
+    },
+    4: {
+        'id': 4,
+        'title': 'Russian Blue Cat',
+        'content': 'This is a picture of a Russian Blue cat.',
+        'date_posted': 'June 15th 2020',
+        'date_updated': 'June 16th 2020',
+        'history': {'June 15th 2020', 'June 16th 2020'},
+    },
+}
+
+
 def search(request):
     try:
         q = request.GET.get('q')
@@ -51,11 +87,35 @@ class WikiResultsView(ListView):
 class WikiListView(ListView):
     model = Content
     template_name = 'wiki/home.html'
-    ordering = ['-date_posted']
+    ordering = ['-date_updated']
 
 
 class WikiDetailView(DetailView):
     model = Content
+
+
+def dummy_list_view(request):
+    context = {
+        'dummy_data': dummy_data,
+        }
+
+    return render(request, "wiki/dummy_data_list.html", context)
+
+
+def dummy_view(request, id):
+    context = {
+        'dummy_data': dummy_data[id],
+        }
+
+    return render(request, "wiki/dummy_data.html", context)
+
+
+def dummy_edit_history(request, id):
+    context = {
+        'dummy_data': dummy_data[id],
+        }
+
+    return render(request, "wiki/dummy_edits.html", context)
 
 
 class WikiCreateView(CreateView):

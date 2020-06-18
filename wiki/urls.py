@@ -5,7 +5,9 @@ from .views import (
     WikiUpdateView,
     # WikiDeleteView,
     WikiEditsView,
-    WikiResultsView
+    WikiResultsView,
+    dummy_view,
+    dummy_list_view,
 )
 from . import views
 
@@ -19,4 +21,7 @@ urlpatterns = [
     # path('content/<int:pk>/delete/', WikiDeleteView.as_view(), name="wiki-delete"),
     path('content/<int:pk>/', WikiDetailView.as_view(), name="wiki-details"),
     path('content/<int:pk>/edits/', WikiEditsView.as_view(), name="wiki-edits"),
+    path('dummy/', views.dummy_list_view, name="dummy-list"),
+    path('dummy/<int:id>/', views.dummy_view, name="dummy-data"),
+    path('dummy/<int:id>/edits/', views.dummy_edit_history, name="dummy-edits"),
 ]

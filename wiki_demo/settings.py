@@ -13,7 +13,7 @@ SECRET_KEY = os.environ.get('WIKI_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = os.environ.get('DEBUG_VALUE')
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['wikipage.herokuapp.com', 'localhost']
 
 
@@ -122,7 +122,8 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+# STATICFILES_STORAGE = 'wiki.storage.WhiteNoiseStaticFilesStorage'
+
 
 STATIC_TMP = os.path.join(BASE_DIR, 'static')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

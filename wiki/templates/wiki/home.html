@@ -1,9 +1,10 @@
 {% extends "wiki/base.html" %}
+{% load static %}
 {% block site %}
 
   <h1>Wiki Home</h1>
 
-  <p>Welcome! Click on the fox picture to get started.</p>
+<p>Click <a href="{% url 'dummy-list' %}">here</a> to see how this site works with some dummy data.</p>
 
   {% for content in contents %}
 

@@ -1,0 +1,24 @@
+{% extends "wiki/base.html" %}
+{% load static %}
+{% block site %}
+
+<p>Welcome! Click on the fox picture to get started.</p>
+
+{% for key, value in dummy_data.items %}
+
+  <article class="media content-section">
+    <div>
+      <h2><a style="display:block" class="article-title" href="{% url 'dummy-data' value.id %}">{{ value.title }}</a></h2>
+      <p>Posted on {{ value.date_posted }}</p>
+      <div style="width: 350px;">
+        <a style="display:block" class="article-title" href="{% url 'dummy-data' value.id %}"><img  style="width: 100%; height: auto; float: left; padding: 10px;" src="{% static '/wiki/' %}{{ value.title }}.jpg" alt=""></a>
+      </div>
+      <a style="display:block" class="article-content" href="{% url 'dummy-data' value.id %}"><p class="article-content">{{ value.content | safe }}</p></a>
+    </div>
+
+  </article>
+
+
+{% endfor %}
+
+{% endblock site %}

@@ -29,6 +29,7 @@
           <div class="navbar-nav mr-auto">
             <a class="nav-item nav-link" href="{% url 'wiki-home' %}">Home</a>
             <a class="nav-item nav-link" href="{% url 'wiki-create' %}">New Wiki</a>
+            <a class="nav-item nav-link" href="{% url 'dummy-list' %}">Demo</a>
           </div>
           <!-- Navbar Right Side -->
           <div class="navbar-nav">
@@ -54,7 +55,7 @@
 
         </div>
 
-        {% block sidebar %}{% endblock %}
+          {% block sidebar %} {% endblock %}
 
       </div>
     </main>
