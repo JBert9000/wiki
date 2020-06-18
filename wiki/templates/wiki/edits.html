@@ -24,7 +24,7 @@
     <h3>More about {{ object.title }}</h3>
     <p class='text-muted'>
       <ul class="list-group">
-        <li class="list-group-item list-group-item-light"><a href="https://en.wikipedia.org/wiki/{{ object.title }}" target="_blank">Wikipedia Page</a></li>
+        <li class="list-group-item list-group-item-light"><a href="https://en.wikipedia.org/wiki/{{ object.title }}" target="_blank">{{ object.title }} Wikipedia Page</a></li>
         <li class="list-group-item list-group-item-light"><a href="https://duckduckgo.com/?q={{ object.title }}&t=ffab&ia=web" target="_blank">Search {{ object.title }} On DuckDuckGo</a></li>
         <li class="list-group-item list-group-item-light"><a href="https://duckduckgo.com/?q={{ object.title }}&t=ffab&iax=images&ia=images" target="_blank">Find Pictures Of {{ object.title }} On DuckDuckGo</a></li>
         <li class="list-group-item list-group-item-light"><a href="{% url 'wiki-details' object.id %}">Go Back To {{ object.title }} Page</a></li>

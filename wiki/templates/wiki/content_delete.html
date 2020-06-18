@@ -3,13 +3,13 @@
 {% block site %}
 
         <form method="POST" enctype="multipart/form-data" action=".">
-             <!-- csrf_token %} -->
+             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Delete Post</legend>
                 <h2>Are you sure you want to delete the {{ object.title }} wiki?</h2>
             </fieldset>
             <div class="form-group">
-                <!-- <button class="btn btn-outline-danger" type="submit" value="submit">Delete</button> -->
+                <button class="btn btn-outline-danger" type="submit" value="submit">Delete</button>
                 <a class="btn btn-outline-secondary" href="{% url 'wiki-details' object.id %}">Cancel</a>
             </div>
         </form>
