@@ -5,12 +5,11 @@
 <article class="media content-section">
     <div class="media-body">
       <div class="article-metadata">
-        <!-- <a class="mr-2" href="#">object.author }}</a> -->
         <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
       </div>
       <h2 class="article-title">{{ dummy_data.title }}</h2>
       <div style="width: 350px;">
-        <img style="width: 100%; height: auto; float: left; padding: 10px;" src="{% static '/wiki/'|add:value.title|add:'.jpg' %}" alt="">
+        <img style="width: 100%; height: auto; float: left; padding: 10px;" src="{% static '/wiki/' %}{{ dummy_data.title }}.jpg" alt="">
       </div>
       <div class="article-content">{{ dummy_data.content | safe }}</div>
 
@@ -36,6 +35,7 @@
     </p>
 </div>
 
-{% endblock %}
-
 <!-- src="{% static '/wiki/' % dummy_data.title }}.jpg" -->
+
+<!-- src="% static '/wiki/'|add:value.title|add:'.jpg' %}" -->
+{% endblock %}
