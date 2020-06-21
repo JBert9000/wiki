@@ -16,34 +16,38 @@ dummy_data = {
     1: {
         'id': 1,
         'title': 'Fox',
-        'content': 'This is dummy data that is not editable in this demo, but anyone is encouraged to create wiki posts which can also be edited by anyone. Typically a user can create, edit, and delete posts without making a profile. Links via the sidebar will automaically be made based on the title of each wiki post.',
-        'date_posted': 'June 10th 2020',
-        'date_updated': 'June 11th 2020',
-        'history': {'June 10th 2020', 'June 11th 2020'},
+        'content': 'This is dummy data that is not editable in this demo, but anyone is encouraged to create wiki posts which can also be edited by anyone. Typically a user can create, edit, and delete posts without making a profile. When clicking on a specific wiki post, links via the sidebar will automaically be made based on the title of each post.',
+        'date_posted': 'June 13th 2020',
+        'date_updated': 'June 14th 2020',
+        'history': {'June 13th 2020', 'June 14th 2020'},
+        'image': 'https://imagehost.imageupload.net/2020/06/21/fox.jpg'
     },
     2: {
         'id': 2,
         'title': 'Frog',
-        'content': 'While this data is static and is populated from seeded JSON data and pictures from the Django static folder, the wiki posts that users can upload will be stored in a Postgres database within the Django / Heroku backend. All pictures that are uploaded to this site are stored via AWS S3.',
-        'date_posted': 'June 11th 2020',
-        'date_updated': 'June 12th 2020',
-        'history': {'June 11th 2020', 'June 12th 2020'},
+        'content': 'While this data on this page is static and is populated from seeded JSON data, the wiki posts from the main page that users can create will be stored in a Postgres database within the Django / Heroku backend. Pictues from this dummy data are linked from a 3rd part upload site called Imageupload.net. I had trouble with static files when this app uploaded to Heroku even when debug mode was set to false, as the images were working properly on my local machine. All pictures that are uploaded to the main site are stored via AWS S3.',
+        'date_posted': 'June 12th 2020',
+        'date_updated': 'June 13th 2020',
+        'history': {'June 12th 2020', 'June 13th 2020'},
+        'image': 'https://imagehost.imageupload.net/2020/06/21/frog.jpg'
     },
     3: {
         'id': 3,
         'title': 'Cat',
-        'content': 'There is search functionality built into this site which searches the title of the Content model to see if it matches any critera. Go ahead and try it out.',
-        'date_posted': 'June 12th 2020',
-        'date_updated': 'June 13th 2020',
-        'history': {'June 12th 2020', 'June 13th 2020'},
+        'content': 'I have added a module for Django called Summernote which allows markdown text and other features when editing wiki posts. I thought this would be more interesting to incorporate. Another module I used was Simple-history which displays a list of every time each wiki post was updated. Click on the \'Edit History\' tab on the side bar of each wiki post to see it.',
+        'date_posted': 'June 11th 2020',
+        'date_updated': 'June 12th 2020',
+        'history': {'June 11th 2020', 'June 12th 2020'},
+        'image': 'https://imagehost.imageupload.net/2020/06/21/cat.jpg'
     },
     4: {
         'id': 4,
         'title': 'Russian Blue Cat',
-        'content': 'I have added a module for Django called summernote which allows markdown text and other features when editing wiki posts. I thought this would be more interesting to incorporate.',
-        'date_posted': 'June 13th 2020',
-        'date_updated': 'June 14th 2020',
-        'history': {'June 13th 2020', 'June 14th 2020'},
+        'content': 'There is search functionality which searches the title of the Content model to see if it matches any critera. Go ahead and try it out in the main part of this site.',
+        'date_posted': 'June 10th 2020',
+        'date_updated': 'June 11th 2020',
+        'history': {'June 10th 2020', 'June 11th 2020'},
+        'image': 'https://imagehost.imageupload.net/2020/06/21/russian_blue_cat.jpg'
     },
 }
 
