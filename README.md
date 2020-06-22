@@ -1,4 +1,4 @@
-https://wikipage.herokuapp.com/wiki/
+https://wikipage.herokuapp.com/wiki/ 
 
 # Wiki
 
