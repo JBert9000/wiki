@@ -88,7 +88,7 @@ class WikiListView(ListView):
     template_name = 'wiki/home.html'
     context_object_name = 'contents'
     ordering = ['-date_updated']
-    paginate_by = 5
+    paginate_by = 4
 
 
 class WikiResultsView(ListView):
