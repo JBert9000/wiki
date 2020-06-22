@@ -34,7 +34,7 @@ dummy_data = {
     3: {
         'id': 3,
         'title': 'Cat',
-        'content': 'I have added a module for Django called Summernote which allows markdown text and other features when editing wiki posts. I thought this would be more interesting to incorporate. Another module I used was Simple-history which displays a list of every time each wiki post was updated. Click on the \'Edit History\' tab on the side bar of each wiki post to see it.',
+        'content': 'I have added a module for Django called Summernote which allows markdown text and other features when editing wiki posts. I thought this would be more interesting to incorporate. Another module I used was Simple-History which displays a list of every time each wiki post was updated. Click on the \'Edit History\' tab on the side bar of each wiki post to see it.',
         'date_posted': 'June 11th 2020',
         'date_updated': 'June 12th 2020',
         'history': {'June 11th 2020', 'June 12th 2020'},
